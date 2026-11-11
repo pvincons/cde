@@ -4,11 +4,11 @@
 
 const configuredCdeApi = typeof CONFIG !== 'undefined' && CONFIG.CDE_API
     ? CONFIG.CDE_API.replace(/\/api\/?$/, '')
-    : 'https://api.pvincons.cloud';
+    : 'https://api.pvincons.com';
 const savedCdeApi = localStorage.getItem('cde_api_url') || '';
 const isLocalAuthServer = typeof isLocal !== 'undefined' && isLocal;
 let DATA_SERVER_API = isLocalAuthServer &&
-    savedCdeApi.replace(/\/+$/, '') === 'https://api.pvincons.cloud'
+    savedCdeApi.replace(/\/+$/, '') === 'https://api.pvincons.com'
     ? configuredCdeApi
     : savedCdeApi || configuredCdeApi;
 if (isLocalAuthServer && DATA_SERVER_API === configuredCdeApi) {
